@@ -1,0 +1,4 @@
+﻿
+namespace StoreManager.Skia.Gtk
+{
+}

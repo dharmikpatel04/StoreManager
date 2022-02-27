@@ -20,24 +20,25 @@ namespace StoreManager.Common
               .OnceAsync<TimeSelection>()).Select(item => new TimeSelection
               {
                   QuestionName = item.Object.QuestionName,
-                  SelectedTime = item.Object.SelectedTime
+                  SelectedTime = item.Object.SelectedTime,
+                  SelectedDate = item.Object.SelectedDate
               }).ToList();
         }
-        public async Task AddSelectedTime(string questionName, string selectedTime)
+        public async Task AddSelectedTime(string questionName, string selectedTime, DateTime selecteddateTime)
         {
 
             await firebase
               .Child("Sanitization")
-              .PostAsync(new TimeSelection() { QuestionName = questionName, SelectedTime = selectedTime });
+              .PostAsync(new TimeSelection() { QuestionName = questionName, SelectedTime = selectedTime, SelectedDate= selecteddateTime });
         }
 
-        public async Task<TimeSelection> GetSelectedTime(string questionName, string selectedTime)
+        public async Task<TimeSelection> GetSelectedTime(string questionName, string selectedTime, DateTime selecteddateTime)
         {
             var allSelectedTime = await GetAllSelectedTime();
             await firebase
               .Child("Sanitization")
               .OnceAsync<TimeSelection>();
-            return allSelectedTime.Where(a => (a.SelectedTime == selectedTime && a.QuestionName == questionName)).FirstOrDefault();
+            return allSelectedTime.Where(a => (a.SelectedDate == selecteddateTime && a.SelectedTime == selectedTime && a.QuestionName == questionName)).FirstOrDefault();
         }
     }
 }

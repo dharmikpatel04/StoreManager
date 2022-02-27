@@ -8,5 +8,6 @@ namespace StoreManager.Model
     {
         public string QuestionName { get; set; }
         public string SelectedTime { get; set; }
+        public DateTime SelectedDate { get; set; }
     }
 }

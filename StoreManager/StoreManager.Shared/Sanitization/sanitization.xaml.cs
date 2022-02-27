@@ -47,13 +47,13 @@ namespace StoreManager.Sanitization
 
         private async void dtpicker_DateChanged(object sender, DatePickerValueChangedEventArgs e)
         {
-            var btnfdh11adata = await firebaseHelper.GetSelectedTime("FrontDoorHandles", "11am");
+            var btnfdh11adata = await firebaseHelper.GetSelectedTime("FrontDoorHandles", "11am", dtpicker.Date.DateTime);
             if (btnfdh11adata != null)
             {
                 btnfdh11a.Background = new SolidColorBrush(Windows.UI.Colors.Green);
 
             }
-            var btnfdh12pdata = await firebaseHelper.GetSelectedTime("FrontDoorHandles", "12pm");
+            var btnfdh12pdata = await firebaseHelper.GetSelectedTime("FrontDoorHandles", "12pm", dtpicker.Date.DateTime);
             if (btnfdh12pdata != null)
             {
                 btnfdh12p.Background = new SolidColorBrush(Windows.UI.Colors.Green);
@@ -63,7 +63,7 @@ namespace StoreManager.Sanitization
 
         private async void btnfdh11a_Click(object sender, RoutedEventArgs e)
         {
-            await firebaseHelper.AddSelectedTime("FrontDoorHandles", "11am");
+            await firebaseHelper.AddSelectedTime("FrontDoorHandles", "11am", dtpicker.Date.DateTime);
             var allPersons = await firebaseHelper.GetAllSelectedTime();
             //lstPersons.ItemsSource = allPersons;
             btnfdh11a.Background = new SolidColorBrush(Windows.UI.Colors.Green);

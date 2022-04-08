@@ -29,11 +29,11 @@
             </Grid.RowDefinitions>
             <DatePicker x:Name="dtpicker" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Width="292" Height="40" DateChanged="dtpicker_DateChanged"/>
             <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1">
-                
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*" MaxHeight="40"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="30"/>
@@ -44,57 +44,42 @@
                     <Grid Grid.Row="0" Background="Black" Padding="2">
                         <TextBlock Text="Front Door Handles" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"  FontSize="20px"/>
                     </Grid>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal" >
-                        <Button x:Name="btnfdh11a" Width="50" Height="35"  FontSize="14px" Padding="2" Click="btnfdh11a_Click">11 AM</Button>
-                        <Button x:Name="btnfdh12p" Width="50" Height="35"  FontSize="14px" Padding="2">12 PM</Button>
-                        <Button x:Name="btnfdh1p" Width="50" Height="35"  FontSize="14px" Padding="2">1 PM</Button>
-                        <Button x:Name="btnfdh2p" Width="50" Height="35"  FontSize="14px" Padding="2">2 PM</Button>
-                        <Button x:Name="btnfdh3p" Width="50" Height="35"  FontSize="14px" Padding="2">3 PM</Button>
-                        <Button x:Name="btnfdh4p" Width="50" Height="35"  FontSize="14px" Padding="2">4 PM</Button>
-                        <Button x:Name="btnfdh5p" Width="50" Height="35"  FontSize="14px" Padding="2">5 PM</Button>
-                        <Button x:Name="btnfdh6p" Width="50" Height="35"  FontSize="14px" Padding="2">6 PM</Button>
-                        <Button x:Name="btnfdh7p" Width="50" Height="35"  FontSize="14px" Padding="2">7 PM</Button>
-                        <Button x:Name="btnfdh8p" Width="50" Height="35"  FontSize="14px" Padding="2">8 PM</Button>
-                        <Button x:Name="btnfdh9p" Width="50" Height="35"  FontSize="14px" Padding="2">9 PM</Button>
-                        <Button x:Name="btnfdh10p" Width="50" Height="35"  FontSize="14px" Padding="2">10 PM</Button>
-                        <Button x:Name="btnfdhclose" Width="50" Height="35"  FontSize="14px" Padding="2">Close</Button>
-                    </StackPanel>
+                    <Grid Grid.Row="1">
+
+                        <ListView x:Name="lstVw1" Margin="0,0,0,0" Padding="0,0,0,0" >
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid Orientation="Horizontal" Width="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Content="{Binding}" Width="60" Height="30" Margin="0,0,0,0" Padding="0,0,0,0"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            <x:String>11am</x:String>
+                            <x:String>12pm</x:String>
+                            <x:String>1pm</x:String>
+                            <x:String>2pm</x:String>
+                            <x:String>3pm</x:String>
+                            <x:String>4pm</x:String>
+                            <x:String>5pm</x:String>
+                            <x:String>6pm</x:String>
+                            <x:String>7pm</x:String>
+                            <x:String>8pm</x:String>
+                            <x:String>9pm</x:String>
+                            <x:String>10pm</x:String>
+                            <x:String>Close</x:String>
+                        </ListView>
+                    </Grid>
                     <Grid Grid.Row="2" Background="Black" Padding="2">
                         <TextBlock Text="Garbage Station" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"  FontSize="20px"/>
                     </Grid>
-                    <StackPanel Grid.Row="3" Orientation="Horizontal" >
-                        <Button x:Name="btngs11a" Width="50" Height="35"  FontSize="14px" Padding="2">11 AM</Button>
-                        <Button x:Name="btngs12p" Width="50" Height="35"  FontSize="14px" Padding="2">12 PM</Button>
-                        <Button x:Name="btngs1p" Width="50" Height="35"  FontSize="14px" Padding="2">1 PM</Button>
-                        <Button x:Name="btngs2p" Width="50" Height="35"  FontSize="14px" Padding="2">2 PM</Button>
-                        <Button x:Name="btngs3p" Width="50" Height="35"  FontSize="14px" Padding="2">3 PM</Button>
-                        <Button x:Name="btngs4p" Width="50" Height="35"  FontSize="14px" Padding="2">4 PM</Button>
-                        <Button x:Name="btngs5p" Width="50" Height="35"  FontSize="14px" Padding="2">5 PM</Button>
-                        <Button x:Name="btngs6p" Width="50" Height="35"  FontSize="14px" Padding="2">6 PM</Button>
-                        <Button x:Name="btngs7p" Width="50" Height="35"  FontSize="14px" Padding="2">7 PM</Button>
-                        <Button x:Name="btngs8p" Width="50" Height="35"  FontSize="14px" Padding="2">8 PM</Button>
-                        <Button x:Name="btngs9p" Width="50" Height="35"  FontSize="14px" Padding="2">9 PM</Button>
-                        <Button x:Name="btngs10p" Width="50" Height="35"  FontSize="14px" Padding="2">10 PM</Button>
-                        <Button x:Name="btngsclose" Width="50" Height="35"  FontSize="14px" Padding="2">Close</Button>
-                    </StackPanel>
+                    
                     <Grid Grid.Row="4" Background="Black" Padding="2">
                         <TextBlock Text="Tables" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"  FontSize="20px"/>
                     </Grid>
-                    <StackPanel Grid.Row="5" Orientation="Horizontal" >
-                        <Button x:Name="btntables11a" Width="50" Height="35"  FontSize="14px" Padding="2">11 AM</Button>
-                        <Button x:Name="btntables12p" Width="50" Height="35"  FontSize="14px" Padding="2">12 PM</Button>
-                        <Button x:Name="btntables1p" Width="50" Height="35"  FontSize="14px" Padding="2">1 PM</Button>
-                        <Button x:Name="btntables2p" Width="50" Height="35"  FontSize="14px" Padding="2">2 PM</Button>
-                        <Button x:Name="btntables3p" Width="50" Height="35"  FontSize="14px" Padding="2">3 PM</Button>
-                        <Button x:Name="btntables4p" Width="50" Height="35"  FontSize="14px" Padding="2">4 PM</Button>
-                        <Button x:Name="btntables5p" Width="50" Height="35"  FontSize="14px" Padding="2">5 PM</Button>
-                        <Button x:Name="btntables6p" Width="50" Height="35"  FontSize="14px" Padding="2">6 PM</Button>
-                        <Button x:Name="btntables7p" Width="50" Height="35"  FontSize="14px" Padding="2">7 PM</Button>
-                        <Button x:Name="btntables8p" Width="50" Height="35"  FontSize="14px" Padding="2">8 PM</Button>
-                        <Button x:Name="btntables9p" Width="50" Height="35"  FontSize="14px" Padding="2">9 PM</Button>
-                        <Button x:Name="btntables10p" Width="50" Height="35"  FontSize="14px" Padding="2">10 PM</Button>
-                        <Button x:Name="btntablesclose" Width="50" Height="35"  FontSize="14px" Padding="2">Close</Button>
-                    </StackPanel>
+                   
                 </Grid>
                 
                 

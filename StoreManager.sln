@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreManager.iOS", "StoreMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreManager.UWP", "StoreManager\StoreManager.UWP\StoreManager.UWP.csproj", "{B8CA49DD-75DE-44CE-AC58-88AC25DB6843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreManager.Wasm", "StoreManager\StoreManager.Wasm\StoreManager.Wasm.csproj", "{D8859E46-1F27-4747-ACF1-3F2FDDABE511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreManager.Wasm", "StoreManager\StoreManager.Wasm\StoreManager.Wasm.csproj", "{D8859E46-1F27-4747-ACF1-3F2FDDABE511}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreManager.macOS", "StoreManager\StoreManager.macOS\StoreManager.macOS.csproj", "{D7EE6FF8-FEC6-4CFB-86F3-D349D304DAF4}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreManager.Skia.Gtk", "StoreManager\StoreManager.Skia.Gtk\StoreManager.Skia.Gtk.csproj", "{96BB0A42-6C2A-4204-B0BC-529D4C54F434}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreManager.Skia.Tizen", "StoreManager\StoreManager.Skia.Tizen\StoreManager.Skia.Tizen.csproj", "{4CBE1314-8FA7-421A-A22C-B34CAC87BADD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{EF19979F-0B9E-4C88-B0D4-DA8D1E97810D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{FA218F3D-CBE4-4D93-8E8B-FE573282117A}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -600,6 +604,7 @@ Global
 		{E5BE2083-0F08-4B15-844D-70392E364811} = {8369510E-F73C-49F5-93DD-1CEB448D2B51}
 		{96BB0A42-6C2A-4204-B0BC-529D4C54F434} = {8369510E-F73C-49F5-93DD-1CEB448D2B51}
 		{4CBE1314-8FA7-421A-A22C-B34CAC87BADD} = {8369510E-F73C-49F5-93DD-1CEB448D2B51}
+		{FA218F3D-CBE4-4D93-8E8B-FE573282117A} = {EF19979F-0B9E-4C88-B0D4-DA8D1E97810D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {694598D9-88A1-4A78-B4F8-7357634C0FAB}
